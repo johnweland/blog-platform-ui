@@ -1,0 +1,13 @@
+.nav {
+    & .nav__item {
+        display: flex;
+        & a {
+            padding: 1rem;
+            width: 100%;
+            &:hover {
+                background-color: $color-primary;
+                color: invert($color-primary);
+            }
+        }
+    }
+}

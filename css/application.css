@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  color: #555;
+  background-color: #ededed;
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #555;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.content main {
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+footer {
+  margin-top: auto;
+}
+
+@media screen and (min-width: 800px) {
+  .content {
+    flex-direction: row;
+  }
+}
+
+.site-header {
+  background-color: #262626;
+  padding: 1rem;
+  color: #d9d9d9;
+}
+
+.site-header a {
+  text-decoration: none;
+  color: #d9d9d9;
+}
+
+.nav .nav__item {
+  display: flex;
+}
+
+.nav .nav__item a {
+  padding: 1rem;
+  width: 100%;
+}
+
+.nav .nav__item a:hover {
+  background-color: #ededed;
+  color: #121212;
+}
+
+.nav-drawer {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #262626;
+  color: #d9d9d9;
+}
+
+.nav-drawer.expanded {
+  max-width: 100%;
+}
+
+.nav-drawer.expanded .toggle-switch {
+  background: url('data:image/svg+xml;utf8,<svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-menu-button" fill="lightgrey" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M0 1.5A1.5 1.5 0 0 1 1.5 0h8A1.5 1.5 0 0 1 11 1.5v2A1.5 1.5 0 0 1 9.5 5h-8A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-8zM14 7H2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zM2 6a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H2z"/><path fill-rule="evenodd" d="M15 11H1v-1h14v1zM2 12.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z"/><path d="M7.823 2.823l-.396-.396A.25.25 0 0 1 7.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.nav-drawer.expanded .nav {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-drawer.expanded .nav ul {
+  width: 100%;
+}
+
+.nav-drawer.expanded .nav .nav__item {
+  width: 100%;
+}
+
+.nav-drawer.expanded .nav .nav__item a {
+  display: flex;
+}
+
+.nav-drawer.expanded .nav .nav__item svg {
+  margin-right: 1rem;
+}
+
+.nav-drawer .toggle-switch {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('data:image/svg+xml;utf8,<svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-menu-button-wide" fill="lightgrey" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v2A1.5 1.5 0 0 1 14.5 5h-13A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-13zM14 7H2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zM2 6a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H2z"/><path fill-rule="evenodd" d="M15 11H1v-1h14v1zM2 12.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0-10a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z"/><path d="M12.823 2.823l-.396-.396A.25.25 0 0 1 12.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  cursor: pointer;
+}
+
+.nav-drawer .nav {
+  display: none;
+  width: 100%;
+  height: 0;
+}
+
+.nav-drawer .nav .nav__item a {
+  color: #d9d9d9;
+}
+
+.nav-drawer .nav .nav__item a:hover {
+  background-color: #333333;
+  color: #d9d9d9;
+}
+
+@media screen and (min-width: 800px) {
+  .nav-drawer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    width: calc(50px + 0.5rem);
+  }
+  .nav-drawer.expanded {
+    width: 300px;
+  }
+  .nav-drawer.expanded .nav .nav__item a span {
+    display: inline-block;
+  }
+  .nav-drawer .nav {
+    display: flex;
+  }
+  .nav-drawer .nav .nav__item a span {
+    display: none;
+  }
+}
