@@ -1,9 +1,16 @@
+.toggle-switch {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 .nav-drawer {
     display: flex;
     flex-direction: column;
     overflow: hidden;
     background-color: $color-accent;
     color: invert($color-accent);
+    transition: all 0.3s ease-in-out;
     &.expanded {
         max-width: 100%;
         & .toggle-switch {
@@ -12,21 +19,7 @@
             background-position: 50% 50%;
         }
         & .nav {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            & ul {
-                width: 100%;
-            }
-            & .nav__item {
-                width:  100%;
-                & a {
-                    display: flex;
-                }
-                & svg {
-                    margin-right: 1rem;
-                }
-            }
+            margin-top: 0;
         }
     }
     & .toggle-switch {
@@ -41,20 +34,33 @@
         cursor: pointer;
     }
     & .nav {
-        display: none;
+        display: flex;
         width: 100%;
-        height: 0;
+        margin-top: -100%;
+        transition: all 0.3s ease-in-out;
+        & ul {
+            width: 100%;
+        }
         & .nav__item a {
-            color: invert($color-accent);
-            &:hover {
-                background-color: lighten($color-accent, 5);
+                display: flex;
                 color: invert($color-accent);
+                &:hover {
+                    background-color: lighten($color-accent, 5);
+                    color: invert($color-accent);
+                }
+            & svg {
+                margin-right: 1rem;
             }
         }
     }
 }
 
 @media screen and (min-width: 800px) {
+    .toggle-switch {
+        position: unset;
+        top: 0;
+        right: 0;
+    }
     .nav-drawer {
         display: flex;
         flex-direction: column;
@@ -64,6 +70,9 @@
             width: 300px;
             & .nav {
                 & .nav__item a {
+                    & svg {
+                        margin-right: 1rem;
+                    }
                     & span {
                         display: inline-block;
                     }
@@ -71,8 +80,12 @@
             }
         }
         & .nav {
+            margin-top: unset;
             display: flex;
             & .nav__item a {
+                & svg {
+                    margin-right: unset;
+                }
                 & span {
                     display: none;
                 }
